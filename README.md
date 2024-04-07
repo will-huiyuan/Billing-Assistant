@@ -1,2 +1,23 @@
 # Billing-Assistant
-A GPTs used for summarizing your receipt and use python to make bill
+## github
+https://github.com/will-huiyuan/Billing-Assistant/
+## GPT
+https://chat.openai.com/g/g-jZHjdJkR7-billing-assistant
+## 简介
+这是一个处理你日常记账的GPTs，将你拍的小票照片传入，不需要任何指令，即可生成一个字典格式的内容摘要。对应不同种类的货币，会进行自动的汇率换算
+## 汇率换算
+换算的目标为加元，换算根据一个内置数据库进行，但对常用汇率进行了微调，使用普遍认可的稳定值进行换算。
+## 分类
+为保证每次的分类结果相同，gpt只会输出 `食品,旅游,生活用品,学习,电子产品,交通,娱乐` 之一，若无法判断则会留空。
+
+注意，对于杂货店和商场作为收款方的小票，GPT会输出`生活用品`，无论你买的是什么。
+
+## 使用代码进行记账
+库中提供了配套使用的python代码，每次得到输出后将结果替换原字典的内容即可
+### 安装库
+程序依靠`openpyxl` 运行,安装python后运行`pip install openpyxl`以安装
+### 设置文件路径
+代码支持多路径，如果你的文件在win，mac上通过网盘挂载的方式同步，可通过设置不同的路径在多系统下无缝使用此程序
+### 强制替换
+代码中有两个字典可以强制替换商家名称和商家类型，便于你使用好记忆的名字。
+你可以查看代码中的注释进行更改
